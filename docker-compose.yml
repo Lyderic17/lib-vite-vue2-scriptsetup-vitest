@@ -1,0 +1,15 @@
+version: "3"
+services:
+  library:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: random-lib
+    expose:
+      - 1717
+    ports:
+      - 1717:1717
+    entrypoint: ["yarn", "dev"]
+    volumes:
+      - .:/app
+      - /app/node_modules
